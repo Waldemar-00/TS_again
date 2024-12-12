@@ -10,3 +10,4 @@ const readonlyTuple = tuple;
 const readonlyTupleArray = [222, 'Developer']; //* it is ARRAY!!!!!!
 //! readonlyTuple.push(114) Property 'push' does not exist on type 'readonly [number, string]'
 //! readonlyTuple[1] = 'something'  Cannot assign to '1' because it is a read-only property.
+//! ________________USE TUPLES with __READONLY__ to stop using push___________________
