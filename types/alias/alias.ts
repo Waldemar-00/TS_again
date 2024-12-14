@@ -35,7 +35,8 @@ type User = {
 }
 type Role = {
     name: string, //! if both type of name will be literal const user_With_Role will be type: never
-    admin: boolean
+    admin: boolean,
+    log(): string
 }
 type UserWithRole = User & Role
 
@@ -46,7 +47,11 @@ const user00: User = {
 
 const role: Role = {
     name: 'Smith',
-    admin: true
+    admin: true,
+    log ()
+    {
+        return `${this.name} is ${this.admin}`
+    }
 }
 const user_With_Role: UserWithRole = Object.assign( user00, role )
 console.log(user_With_Role)

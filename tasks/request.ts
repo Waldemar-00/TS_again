@@ -1,23 +1,5 @@
-interface OurRequest
-{
-    "topicId": number,
-	"status": string
-}
-// const request: OurRequest = {
-// 	"topicId": 5,
-// 	"status": "published"
-// }
-const _URL: string = 'https://jsonplaceholder.typicode.com/comments/1'
-// async function getFAQs<T extends OurRequest>(req: T): Promise<unknown> | never {
-// 	const res = await fetch(_URL, {
-// 		method: 'POST',
-// 		body: JSON.stringify(req)
-// 	});
-//     const data: unknown = await res.json()
-//     if(typeof data === 'object' && data?.hasOwnProperty('body')) return data as Post
-// 	else throw new Error('Request was failed')
-// }
-// getFAQs<OurRequest>( request )
+//! TASK 1
+const _URL: string = 'https://example.com'
 enum FAQsStatus
 {
     PUBLISHED = 'PUBLISHED',
@@ -57,7 +39,7 @@ async function getFAQs (
     if(typeof data === 'object' && data?.hasOwnProperty('body')) return data
 	else throw new Error('Request was failed')
 }
-getFAQs( request )
+// getFAQs( request )
 interface OurResponse
 {
     "question": string,
@@ -67,18 +49,46 @@ interface OurResponse
     "status": string
 }
 
-// "question": "Как осуществляется доставка?",
-//     "answer": "быстро!",
-//     "tags": [
-//         "popular",
-//         "new"
-//     ],
-//     "likes": 3,
-//     "status": "published"
+//! TASK 2
+interface PostData {
+	"sum": number,
+	"from": number,
+	"to": number
+}
+const postData: PostData = {
+    "sum": 10000,
+	"from": 2,
+    "to": 4
+}
+enum Status {
+    SUCCESS = 'SUCCESS',
+    FAILED = 'FAILD'
+}
+interface Resp {
+	"status": Status.SUCCESS,
+	"data": {
+		"databaseId": number,
+		"sum": number,
+		"from": number,
+		"to": number
+	}
+}
+interface Failed
+{
+  "status": Status.FAILED,
+	"data": {
+		"errorMessage": string,
+		"errorCode": number
+	}
+}
+async function postAmount (url: string, data: PostData ): Promise<Resp | Failed>
+{
+    const response = await fetch( url, {
+        method: 'POST',
+        body: JSON.stringify(data)
+    } )
+    const result: Resp | Failed = await response.json()
+    return result
+}
 
-
-    //    "postId": 1,
-    //     "id": 1,
-    //     "name": "id labore ex et quam laborum",
-    //     "email": "Eliseo@gardner.biz",
-    //     "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+postAmount(_URL, postData)
