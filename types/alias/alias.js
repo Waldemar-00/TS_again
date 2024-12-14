@@ -31,7 +31,10 @@ const user00 = {
 };
 const role = {
     name: 'Smith',
-    admin: true
+    admin: true,
+    log() {
+        return `${this.name} is ${this.admin}`;
+    }
 };
 const user_With_Role = Object.assign(user00, role);
 console.log(user_With_Role);

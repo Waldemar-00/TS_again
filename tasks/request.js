@@ -8,21 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// const request: OurRequest = {
-// 	"topicId": 5,
-// 	"status": "published"
-// }
-const _URL = 'https://jsonplaceholder.typicode.com/comments/1';
-// async function getFAQs<T extends OurRequest>(req: T): Promise<unknown> | never {
-// 	const res = await fetch(_URL, {
-// 		method: 'POST',
-// 		body: JSON.stringify(req)
-// 	});
-//     const data: unknown = await res.json()
-//     if(typeof data === 'object' && data?.hasOwnProperty('body')) return data as Post
-// 	else throw new Error('Request was failed')
-// }
-// getFAQs<OurRequest>( request )
+//! TASK 1
+const _URL = 'https://example.com';
 var FAQsStatus;
 (function (FAQsStatus) {
     FAQsStatus["PUBLISHED"] = "PUBLISHED";
@@ -46,17 +33,24 @@ function getFAQs(req) {
             throw new Error('Request was failed');
     });
 }
-getFAQs(request);
-// "question": "Как осуществляется доставка?",
-//     "answer": "быстро!",
-//     "tags": [
-//         "popular",
-//         "new"
-//     ],
-//     "likes": 3,
-//     "status": "published"
-//    "postId": 1,
-//     "id": 1,
-//     "name": "id labore ex et quam laborum",
-//     "email": "Eliseo@gardner.biz",
-//     "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+const postData = {
+    "sum": 10000,
+    "from": 2,
+    "to": 4
+};
+var Status;
+(function (Status) {
+    Status["SUCCESS"] = "SUCCESS";
+    Status["FAILED"] = "FAILD";
+})(Status || (Status = {}));
+function postAmount(url, data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data)
+        });
+        const result = yield response.json();
+        return result;
+    });
+}
+postAmount(_URL, postData);
