@@ -1,3 +1,4 @@
+"use strict";
 //* We have an object from some server userFrom
 function assertsNumber(value) {
     if (typeof value !== 'number')
@@ -6,7 +7,7 @@ function assertsNumber(value) {
 function getValue(value) {
     try {
         assertsNumber(value);
-        return "The value is a number: ".concat(value);
+        return `The value is a number: ${value}`;
     }
     catch (error) {
         if (error instanceof Error)
@@ -15,15 +16,15 @@ function getValue(value) {
 }
 console.log(getValue(111));
 console.log(getValue('111'));
-var assertedKeys = ['name', 'age', 'email'];
-var commingUser = {
+const assertedKeys = ['name', 'age', 'email'];
+const commingUser = {
     name: 'Sony',
     age: 45,
     email: 'sony@getMaxListeners.com',
     description: 'Lorem ipsum dolor sit amet',
 };
 function assertsObject(obj) {
-    var truth = assertedKeys.every(function (key) { return key in obj; });
+    const truth = assertedKeys.every(key => key in obj);
     // const truth = Object.keys( obj as IAssertedUser ).every( (key, index) => key === assertedKeys[index] )
     if (typeof obj === 'object' && obj !== null && truth)
         return;

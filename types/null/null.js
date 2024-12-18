@@ -1,12 +1,13 @@
-var N = null;
-var nAny = null;
+"use strict";
+const N = null;
+const nAny = null;
 function getUser() {
     if (Math.random() > 0.5) {
-        var user = { name: 'VALDEMAR' };
+        const user = { name: 'VALDEMAR' };
         return user;
     }
     else
         return null;
 }
-var gottenUser = getUser();
+const gottenUser = getUser();
 console.log(gottenUser);

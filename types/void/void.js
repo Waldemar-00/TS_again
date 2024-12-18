@@ -4,4 +4,4 @@ const user_01 = {
     name: 'Peter',
     skills: []
 };
-skills.forEach(s => user_01.skills.push(s)); //! The push method returns number
+UserSkills.forEach(s => user_01.skills.push(s)); //! The push method returns number

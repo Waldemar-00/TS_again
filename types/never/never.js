@@ -1,3 +1,4 @@
+"use strict";
 function generateError() {
     throw new Error('Error');
 }
@@ -18,7 +19,7 @@ function proccesAction(action) {
             checkout();
             break;
         default:
-            var _checking = action;
+            const _checking = action;
             throw new Error();
     }
 }

@@ -1,11 +1,12 @@
-var s = 'stri7ng';
-var n = parseInt(s);
+"use strict";
+let s = 'stri7ng';
+let n = parseInt(s);
 console.log(n);
-var num = 100;
-var numToString = num.toString();
+let num = 100;
+let numToString = num.toString();
 console.log(numToString);
-var numNewString = new String(num);
+let numNewString = new String(num);
 console.log(numNewString.valueOf());
-var numAs = 111;
-var numAsString = numAs;
+const numAs = 111;
+const numAsString = numAs;
 console.log(typeof numAsString); //! number
