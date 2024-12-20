@@ -42,4 +42,4 @@ class UserPayment {
     }
 }
 const userPayment = new UserPayment(new User11('John'), new Payment11(new Date()));
-console.log(userPayment);
+console.log(userPayment.payment);
