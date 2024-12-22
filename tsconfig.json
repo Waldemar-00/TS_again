@@ -46,32 +46,32 @@
     // "noResolve": true,                                /* Disallow 'import's, 'require's or '<reference>'s from expanding the number of files TypeScript should add to a project. */
 
     /* JavaScript Support */
-    // "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
-    // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
+    //! "allowJs": true,        FOR OLD PROJECT - JS + TS                          /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    //! "checkJs": true,     FOR OLD PROJECT with JS                            /* Enable error reporting in type-checked JavaScript files. */
     // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
 
     /* Emit */
-    // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+    //! "declaration": true, + *d.ts files                             /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
+    //! "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
     // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
-    // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
-    // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
-    // "noEmit": true,                                   /* Disable emitting files from a compilation. */
-    // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
-    // "removeComments": true,                           /* Disable emitting comments. */
-    // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
+    //! "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
+    //! "inlineSourceMap": true,   bind TS + JS                       /* Include sourcemap files inside the emitted JavaScript. */
+    //! "noEmit": true,                                   /* Disable emitting files from a compilation. */
+    //! "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
+    //! "outDir": "./build",                                   /* Specify an output folder for all emitted files. */
+    //! "removeComments": true,                           /* Disable emitting comments. */
+    //! "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
     // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
-    // "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
-    // "mapRoot": "",                                    /* Specify the location where debugger should locate map files instead of generated locations. */
-    // "inlineSources": true,                            /* Include source code in the sourcemaps inside the emitted JavaScript. */
+    //! "sourceRoot": "",    path for debugger                             /* Specify the root path for debuggers to find the reference source code. */
+    //! "mapRoot": "",        path for debugger                             /* Specify the location where debugger should locate map files instead of generated locations. */
+    //! "inlineSources": true,                            /* Include source code in the sourcemaps inside the emitted JavaScript. */
     // "emitBOM": true,                                  /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */
     // "newLine": "crlf",                                /* Set the newline character for emitting files. */
-    // "stripInternal": true,                            /* Disable emitting declarations that have '@internal' in their JSDoc comments. */
-    // "noEmitHelpers": true,                            /* Disable generating custom helper functions like '__extends' in compiled output. */
-    // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
-    // "preserveConstEnums": true,                       /* Disable erasing 'const enum' declarations in generated code. */
-    // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
+    //! "stripInternal": true,  /*@internal*/ excludes types                       /* Disable emitting declarations that have '@internal' in their JSDoc comments. */
+    //! "noEmitHelpers": true,                            /* Disable generating custom helper functions like '__extends' in compiled output. */
+    //! "noEmitOnError": true,  if error - no emit                          /* Disable emitting files if any type checking errors are reported. */
+    //! "preserveConstEnums": true,  save const Enum                     /* Disable erasing 'const enum' declarations in generated code. */
+    //! "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
 
     /* Interop Constraints */
     // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
@@ -108,5 +108,9 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+  },
+  //! "files": ["app.ts"]
+  //! "include": ["/my_folder/**/app*"] JS + TS + something in a project
+  //! "exclude": ["app.ts"]
+  //! "extends": "path to 'root' config file"
 }
