@@ -13,7 +13,7 @@ function dataToString(data) {
         case "object":
             return JSON.stringify(data).toString();
         default:
-            return undefined;
+            return "undefined";
     }
     // if ( typeof data === 'function' ) return data.toString()
     // if ( typeof data === 'symbol' ) return data.toString()
