@@ -5,6 +5,12 @@ const logLine = {
         a: 10
     }
 };
+const logLineLiteral = {
+    timeStamp: new Date(),
+    data: {
+        a: 10
+    }
+};
 const someFunction = function (arg) {
     return arg[0];
 };
