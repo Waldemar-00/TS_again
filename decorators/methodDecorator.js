@@ -24,6 +24,6 @@ key, descriptor) {
         console.log(key);
         console.log(descriptor);
     };
-    console.log('After redefined');
+    console.log(' redefined');
 }
 new UserError(8888).error();
