@@ -16,9 +16,14 @@ class UserError {
 __decorate([
     DLog
 ], UserError.prototype, "error", null);
-function DLog(target, key, descriptor) {
-    console.log(target);
-    console.log(key);
-    console.log(descriptor);
+function DLog(target, //! instance of UserError
+key, descriptor) {
+    console.log('Before redefined');
+    descriptor.value = () => {
+        console.log(target);
+        console.log(key);
+        console.log(descriptor);
+    };
+    console.log('After redefined');
 }
-console.log(new UserError(8888).error());
+new UserError(8888).error();
